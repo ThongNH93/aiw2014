@@ -1,2 +1,133 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<script>
+    $(window).load(function () {
+        $('.slider')._TMS({
+            show: 0,
+            pauseOnHover: false,
+            prevBu: '.prev',
+            nextBu: '.next',
+            playBu: false,
+            duration: 800,
+            preset: 'random',
+            pagination: false, //'.pagination',true,'<ul></ul>'
+            pagNums: false,
+            slideshow: 8000,
+            numStatus: false,
+            banners: true,
+            waitBannerAnimation: false,
+            progressBar: false
+        });
+        $("#tabs").tabs();
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+    });
+</script>
+
+<div class="main">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="slider-relative">
+        <div class="slider-block">
+          <div class="slider"> <a href="#" class="prev"></a><a href="#" class="next"></a>
+            <ul class="items">
+              <li><img src=<%= image_path("images/slide.jpg") %> alt="">
+                <div class="banner">
+                  <div>THERE ARE PLENTY OF PLACES</div>
+                  <br>
+                  <span> that are worth seeing</span> </div>
+              </li>
+              <li><img src=<%= image_path("images/slide1.jpg") %> alt=""></li>
+              <li><img src=<%= image_path("images/slide2.jpg") %> alt=""></li>
+              <li><img src=<%= image_path("images/slide3.jpg") %> alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container_12">
+      <div class="grid_12">
+        <h3>Vietnam Famous Destinations</h3>
+      </div>
+      <div class="boxes">
+        <div class="grid_4">
+          <figure>
+            <div><img src=<%= image_path("images/page1_img1.jpg") %> alt=""></div>
+            <figcaption>
+              <h3>Northern Vietnam</h3>
+              Hanoi – crowded old quarter; Sapa – most nature beauty mountains in Vietnam; Ha Long Bay – The seven wonder of the world; Ninh Binh – The Ha Long Bay in land, beauty country side with a lot of limestone
+              <%= link_to "Details", home_area_path(Area.find_by_name("NORTHERN VIETNAM").id), :class => "btn" %>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="grid_4">
+          <figure>
+            <div><img src=<%= image_path("images/page1_img2.jpg") %> alt=""></div>
+            <figcaption>
+              <h3>Central Vietnam</h3>
+              Take four of Vietnam’s most compelling destinations — Da Nang, Hoi An, Hue and Lang Co — and what do you get? One magnificent experience: Central Coast Vietnam.
+              <%= link_to "Details",home_area_path(Area.find_by_name("CENTRAL VIETNAM").id), :class => "btn" %>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="grid_4">
+          <figure>
+            <div><img src=<%= image_path("images/page1_img3.jpg") %> alt=""></div>
+            <figcaption>
+              <h3>Southern Vietnam</h3>
+              Southern Vietnam covers the Mekong Delta and the area around Ho Chi Minh City (Saigon), Vietnam. As all deltas, it receives the bounty of the siltation from the upper Mekong, and as such is a very rich and lush area, covered with rice fields
+              <%= link_to "Details",home_area_path(Area.find_by_name("SOUTHERN VIETNAM").id), :class => "btn" %>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid_8">
+        <div id="tabs" style="width: auto">
+          <ul>
+            <li><a href="#tabs-1">last minute</a></li>
+            <li><a href="#tabs-2">popular post</a></li>
+          </ul>
+
+          <% @last_minutes.each do |location| %>
+              <div class="tab_cont" id="tabs-1"> <img src=<%= image_path(location.image) %> alt="" height="150px" width="300px">
+                <div class="extra_wrapper">
+                  <div class="text1"><%= location.name%> </div>
+                  <p class="style1"><%= location.description %></p>
+                  <%= link_to 'Details', home_location_path(location.id), :class => "btn" %>
+                </div>
+              </div>
+          <% end %>
+
+
+        </div>
+      </div>
+      <div class="grid_4">
+        <div class="newsletter_title">NewsLetter </div>
+        <div class="n_container">
+          <form id="newsletter" action="#">
+            <div class="success">Your subscribe request has been sent!</div>
+            <div class="text1">Sign up to receive our newsletters </div>
+            <label class="email">
+              <input type="email" value="email address" >
+              <span class="error">*This is not a valid email address.</span> </label>
+            <div class="clear"></div>
+            <a href="#" class="" data-type="submit"></a>
+          </form>
+          <ul class="list">
+            <li><a href="#">Hanoi </a></li>
+            <li><a href="#">Haiphong </a></li>
+            <li><a href="#">Saigon </a></li>
+            <li><a href="#">Hue </a></li>
+            <li><a href="#">Cantho </a></li>
+            <li><a href="#">Nhatrang </a></li>
+            <li><a href="#">Halong Bay </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+</div>

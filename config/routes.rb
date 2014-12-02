@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   root 'home#index'
 
-  get 'home/index'
-  get 'home/sample'
+  get 'home/index',  to: 'home#index', as: 'home_index'
+  get 'home/gallery', to: 'home#gallery', as: 'home_gallery'
+  get 'home/area/:id',  to: 'home#area', as: 'home_area'
+  get 'home/province/:id',  to: 'home#province', as: 'home_province'
+  get 'home/location/:id',  to: 'home#location', as: 'home_location'
+  get 'home/image/:id', to: 'home#image', as:'home_image'
+  get 'home/about'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

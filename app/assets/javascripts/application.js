@@ -13,6 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-//= require bootstrap.min
-//= require custom
+//= require_tree
+//= require_self
+//= require ckeditor/init
+
+//= require forms
+//= require html5shiv
+//= require jquery.carouFredSel-6.1.0-packed
+//= require jquery-migrate-1.1.1
+//= require jquery.easing.1.3
+//= require superfish
+//= require tms-0.4.1
+//= require touchTouch.jquery
+//= require jquery.jqtransform
+//= require jquery.ui.totop
+//= require jquery
+//= require jquery.touchSwipe.min
+//= require jquery.easing.1.3
+//= require jquery.touchSwipe.min
+//= require jquery-ui-1.10.3.custom.min
+
+
