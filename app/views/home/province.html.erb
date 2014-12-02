@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="content">
+    <div class="container_12">
+      <div class="grid_9">
+        <h3><%=@province.name  %></h3>
+
+        <% @locations.each do |location|%>
+            <div class="blog">
+              <time datetime="2014-01-01">23<br>
+                MAR</time>
+              <div class="extra_wrapper">
+                <div class="text1 upp"><%= location.name %> </div>
+                <div class="links">Posted by Demo Use </div>
+              </div>
+              <div class="clear"></div>
+              <img src="<%= image_path(location.image) %>" alt="" class="img_inner fleft" width="350px" height="220px">
+              <div class="extra_wrapper">
+                <p class="text1"><%= location.description %> </p>
+                <%=link_to "Details", home_location_path(location.id), :class =>"btn" %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <%= render 'layouts/sidebar' %>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+</div>

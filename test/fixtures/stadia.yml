@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Stadium_ID: 
+  Stadium_Name: MyString
+  Address: MyString
+  Built: 2014-11-21 01:51:02
+  Capacity: 
+  Pitch_Area: MyString
+  Height: 
+  Phone: MyString
+
+two:
+  Stadium_ID: 
+  Stadium_Name: MyString
+  Address: MyString
+  Built: 2014-11-21 01:51:02
+  Capacity: 
+  Pitch_Area: MyString
+  Height: 
+  Phone: MyString

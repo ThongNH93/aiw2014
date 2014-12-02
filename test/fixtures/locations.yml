@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  content: MyText
+  image: MyString
+  view: 1
+  province_id: 1
+
+two:
+  name: MyString
+  description: MyString
+  content: MyText
+  image: MyString
+  view: 1
+  province_id: 1

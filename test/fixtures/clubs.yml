@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Club_ID: 
+  Club_Name: MyString
+  Built: 
+  NickName: MyString
+  Stadium_ID: 
+  Background_Summary: MyString
+
+two:
+  Club_ID: 
+  Club_Name: MyString
+  Built: 
+  NickName: MyString
+  Stadium_ID: 
+  Background_Summary: MyString

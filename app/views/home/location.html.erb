@@ -1,0 +1,48 @@
+<section id="ccr-left-section" class="col-md-8">
+
+<div class="current-page">
+  <% link_to home_index_path do %>
+      <i class="fa fa-home"></i> <i class="fa fa-angle-double-right"></i></a> <a href="blog.html">Blog <i class="fa fa-angle-double-right"></i></a> Single
+  <% end %>
+</div> <!-- / .current-page -->
+
+<article id="ccr-article">
+  <h1><%= @location.name %></h1>
+
+  <div class="article-like-comment-date">
+    Posted by on <%= @location.created_at %>
+
+  </div> <!-- /.article-like-comment-date -->
+
+
+  <%= @location.content.html_safe %>
+
+</article> <!-- /#ccr-single-post -->
+
+
+<section id="ccr-article-related-post">
+  <div class="ccr-gallery-ttile">
+    <span class="bottom"></span>
+    <p>Related Post</p>
+  </div> <!-- .ccr-gallery-ttile -->
+  <ul>
+    <% @related_locations.each do |location| %>
+    <li>
+
+      <div class="ccr-thumbnail">
+        <%=link_to home_location_path(location.id) do%>
+            <img src=<%= image_path(location.image) %>  alt="" height="150px" width="200px">
+        <% end %>
+        <p><%= link_to "Read More", home_location_path(location.id)%></p>
+      </div>
+      <h5><%= link_to location.name, home_location_path(location.id)%></h5>
+    </li>
+    <% end %>
+  </ul>
+
+</section> <!-- /#ccr-article-related-post -->
+
+<section class="bottom-border"></section> <!-- /#bottom-border -->
+
+
+</section><!-- /.col-md-8 / #ccr-left-section -->

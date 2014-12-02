@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Player_ID: 
+  Player_Name: MyString
+  Club_ID: 
+  Position_ID: 
+  DOB: 2014-11-21 02:04:04
+  Profile_Picture: MyString
+  Background_Summary: MyString
+
+two:
+  Player_ID: 
+  Player_Name: MyString
+  Club_ID: 
+  Position_ID: 
+  DOB: 2014-11-21 02:04:04
+  Profile_Picture: MyString
+  Background_Summary: MyString

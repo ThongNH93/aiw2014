@@ -1,0 +1,32 @@
+<header>
+  <div class="container_12">
+    <div class="grid_12">
+      <h1><%= link_to home_index_path do %>
+            <img src=<%= image_path("images/logo.png") %> alt="">
+           <% end %>
+      </h1>
+      <div class="clear"></div>
+    </div>
+    <div class="menu_block">
+      <nav>
+        <ul class="sf-menu">
+          <li class="current"><%= link_to "Home", home_index_path %>
+          <li><%= link_to "About", home_about_path  %>
+          </li>
+          <li><%= link_to "Gallery", home_gallery_path %></li>
+
+          <li class="with_ul"><a href="#">Blog</a>
+            <ul>
+              <% @areas.each do |area|%>
+                  <li><%= link_to area.name, home_area_path(area.id) %></li>
+              <% end %>
+            </ul>
+          </li>
+          <li><a href="contacts.html">Contacts</a></li>
+        </ul>
+      </nav>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</header>
