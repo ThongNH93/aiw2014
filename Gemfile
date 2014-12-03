@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -34,5 +34,7 @@ gem 'tzinfo-data'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'ckeditor'
 gem 'carrierwave'
-
-
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
+gem 'sunspot_rails', github: "betam4x/sunspot" # , '2.1.1'
+gem 'sunspot_solr', github: "betam4x/sunspot" # '2.1.1'

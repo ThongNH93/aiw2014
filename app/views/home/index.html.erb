@@ -36,9 +36,9 @@
                   <br>
                   <span> that are worth seeing</span> </div>
               </li>
-              <li><img src=<%= image_path("images/slide1.jpg") %> alt=""></li>
-              <li><img src=<%= image_path("images/slide2.jpg") %> alt=""></li>
-              <li><img src=<%= image_path("images/slide3.jpg") %> alt=""></li>
+              <% @top_images.each do |image| %>
+                  <li><img src=<%=image_path(image.image)%> alt=""></li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -84,16 +84,20 @@
         <div class="clear"></div>
       </div>
       <div class="grid_8">
-        <div id="tabs" style="width: auto">
+        <div id="tabs" >
           <ul>
             <li><a href="#tabs-1">last minute</a></li>
             <li><a href="#tabs-2">popular post</a></li>
           </ul>
 
           <% @last_minutes.each do |location| %>
-              <div class="tab_cont" id="tabs-1"> <img src=<%= image_path(location.image) %> alt="" height="150px" width="300px">
+              <div class="tab_cont" id="tabs-1">
+                <%= link_to home_location_path(location.id) do %>
+                    <img src=<%= image_path(location.image) %> alt="" height="150px" width="300px">
+                <% end %>
                 <div class="extra_wrapper">
-                  <div class="text1"><%= location.name%> </div>
+                  <%= link_to location.name, home_location_path(location.id), :class =>  "text1" %>
+                  <p class="style1"><%= location.created_at.to_s.html_safe %></p>
                   <p class="style1"><%= location.description %></p>
                   <%= link_to 'Details', home_location_path(location.id), :class => "btn" %>
                 </div>
@@ -104,25 +108,28 @@
         </div>
       </div>
       <div class="grid_4">
-        <div class="newsletter_title">NewsLetter </div>
+        <div class="newsletter_title">Province </div>
         <div class="n_container">
-          <form id="newsletter" action="#">
-            <div class="success">Your subscribe request has been sent!</div>
-            <div class="text1">Sign up to receive our newsletters </div>
-            <label class="email">
-              <input type="email" value="email address" >
-              <span class="error">*This is not a valid email address.</span> </label>
-            <div class="clear"></div>
-            <a href="#" class="" data-type="submit"></a>
-          </form>
+          <!--<form id="newsletter" action="#">-->
+            <!--<div class="success">Your subscribe request has been sent!</div>-->
+            <!--<div class="text1">Sign up to receive our newsletters </div>-->
+            <!--<label class="email">-->
+              <!--<input type="email" value="email address" >-->
+              <!--<span class="error">*This is not a valid email address.</span> </label>-->
+            <!--<div class="clear"></div>-->
+            <!--<a href="#" class="" data-type="submit"></a>-->
+          <!--</form>-->
           <ul class="list">
-            <li><a href="#">Hanoi </a></li>
-            <li><a href="#">Haiphong </a></li>
-            <li><a href="#">Saigon </a></li>
-            <li><a href="#">Hue </a></li>
-            <li><a href="#">Cantho </a></li>
-            <li><a href="#">Nhatrang </a></li>
-            <li><a href="#">Halong Bay </a></li>
+            <!--<li><a href="#">Hanoi </a></li>-->
+            <!--<li><a href="#">Haiphong </a></li>-->
+            <!--<li><a href="#">Saigon </a></li>-->
+            <!--<li><a href="#">Hue </a></li>-->
+            <!--<li><a href="#">Cantho </a></li>-->
+            <!--<li><a href="#">Nhatrang </a></li>-->
+            <!--<li><a href="#">Halong Bay </a></li>-->
+          <% @provinces.each do|province| %>
+            <li><%= link_to province.name, home_province_path(province.id)%></li>
+          <% end %>
           </ul>
         </div>
       </div>

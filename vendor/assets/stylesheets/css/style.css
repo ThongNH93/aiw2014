@@ -19,7 +19,9 @@ html {
 color: inherit;
 text-decoration:none;
 }
-
+a{
+    text-decoration: none;
+}
 * {
 	-webkit-text-size-adjust: none;
 }
