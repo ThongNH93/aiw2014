@@ -2,7 +2,7 @@
 .menu_block  {
 	position: relative;
 	padding-left: 144px;
-	padding-top: 97px;
+	padding-top: 97px;(97)
 
 }
 
@@ -18,12 +18,12 @@ nav{ position:relative;padding: 0px 0 0 0;}
 
 }
 
-.sf-menu>li:first-child+li+li {
-	margin-right: 227px;
+.sf-menu>li:first-child+li {
+	margin-right: 250px;(227)
 }
 
 .sf-menu>li+li {
-	margin-left:58px;
+	margin-left:130px;(58)
 }
 
 .sf-menu>li:hover, .sf-menu>li.sfHover, .sf-menu>li.current {
@@ -33,7 +33,7 @@ nav{ position:relative;padding: 0px 0 0 0;}
 
 .sf-menu>li>a{
 	text-transform: uppercase;
-	font-size: 28px;
+	font-size: 30px;
 	font-family: 'Pathway Gothic One', sans-serif;
 	color: #fff;
 	position: relative;
@@ -41,6 +41,7 @@ nav{ position:relative;padding: 0px 0 0 0;}
 	line-height: 28px;
 	z-index: 999;
 	position: relative;
+    text-decoration: none;
 }
 
 
@@ -49,14 +50,13 @@ nav{ position:relative;padding: 0px 0 0 0;}
 }
 
 
-
 /*================================>> 2 Level <<========================================*/
 .sf-menu li ul,.sf-menu li.sfHover>ul{
 	top:39px;
 	left: 50%;
-	margin-left: -33px;
+	margin-left: -82px;
 
-	width: 66px;
+	width: 166px;
 	z-index: 999; 
 	padding-top: 7px;
 	border-radius: 3px;
@@ -98,6 +98,7 @@ border-color: transparent transparent #ffffff
 	font: 20px/20px 'Pathway Gothic One', sans-serif;;
 	position: relative;
 	color: #6b7488;
+    text-decoration: none;
 
 }
 

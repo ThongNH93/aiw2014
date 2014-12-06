@@ -12,8 +12,11 @@
  *
  *= require_self
  *= require_tree
+ *= require style2
  *= require css/style
  *= require css/slider
  *= require css/touchTouch
+
+
  */
 

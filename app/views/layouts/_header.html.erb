@@ -10,19 +10,16 @@
     <div class="menu_block">
       <nav>
         <ul class="sf-menu">
-          <li class="current"><%= link_to "Home", home_index_path %>
+          <li><%= link_to "Home", home_index_path %>
           <li><%= link_to "About", home_about_path  %>
-          </li>
           <li><%= link_to "Gallery", home_gallery_path %></li>
-
-          <li class="with_ul"><a href="#">Blog</a>
+          <li class="with_ul"><a href="#">Area</a>
             <ul>
               <% @areas.each do |area|%>
                   <li><%= link_to area.name, home_area_path(area.id) %></li>
               <% end %>
             </ul>
           </li>
-          <li><a href="contacts.html">Contacts</a></li>
         </ul>
       </nav>
       <div class="clear"></div>

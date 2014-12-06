@@ -83,30 +83,34 @@
         </div>
         <div class="clear"></div>
       </div>
+
       <div class="grid_8">
         <div id="tabs" >
           <ul>
             <li><a href="#tabs-1">last minute</a></li>
             <li><a href="#tabs-2">popular post</a></li>
           </ul>
-
+          <div class="clear"></div>
           <% @last_minutes.each do |location| %>
               <div class="tab_cont" id="tabs-1">
                 <%= link_to home_location_path(location.id) do %>
                     <img src=<%= image_path(location.image) %> alt="" height="150px" width="300px">
                 <% end %>
+
                 <div class="extra_wrapper">
                   <%= link_to location.name, home_location_path(location.id), :class =>  "text1" %>
                   <p class="style1"><%= location.created_at.to_s.html_safe %></p>
                   <p class="style1"><%= location.description %></p>
                   <%= link_to 'Details', home_location_path(location.id), :class => "btn" %>
+                  <div class="clear "></div>
                 </div>
+                <div class="clear cl1"></div>
               </div>
           <% end %>
-
-
         </div>
       </div>
+
+
       <div class="grid_4">
         <div class="newsletter_title">Province </div>
         <div class="n_container">
