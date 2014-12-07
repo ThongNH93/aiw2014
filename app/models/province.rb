@@ -7,5 +7,5 @@ class Province < ActiveRecord::Base
 
   # searchable do
   #   text :name, boost: 2
-  # end
+
 end

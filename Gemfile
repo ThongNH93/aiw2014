@@ -43,3 +43,4 @@ gem 'kaminari'
 # group :development do
 #   gem 'sunspot_solr'
 # end
+# gem 'sunspot_solr'
