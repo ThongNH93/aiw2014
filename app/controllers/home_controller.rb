@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-   before_action :set_areas
+   # before_action :set_areas
 
   def index
     @areas=Area.all
@@ -15,44 +15,53 @@ class HomeController < ApplicationController
     end
   end
   def gallery
-    # @areas=Area.all
-    @images_galleries=Gallery.all
+    @areas=Area.all
+    @images_galleries=Gallery.page(params[:page]).per(2)
   end
   def area
-    # @areas=Area.all
+    @areas=Area.all
     @area=Area.find(params[:id])
     @provinces=@area.provinces
-    @locations=@area.places
+    @locations=@area.places.page(params[:page]).per(2)
   end
   def province
-    # @areas=Area.all
+    @areas=Area.all
     @province=Province.find(params[:id])
     @area=@province.area
     @provinces=@area.provinces
-    @locations=@province.locations
+    @locations=@province.locations.page(params[:page]).per(2)
 
   end
   def location
     @areas=Area.all
     @location=Location.find(params[:id])
     @province=@location.province
-    @related_locations=@province.locations.except(@location.id).limit(5)
+    @related_locations=@province.locations.except(@location.id).limit(4)
     @location.update_attribute("view",@location.view.to_i+1)
   end
 
-  def image
-    # @areas=Area.all
-    @image=Gallery.find(params[:id])
-  end
   def search
-    @query = Province.search do
-      fulltext params[:search]
+    # raise(params[:search])
+    @areas=Area.all
+    @top_images=Gallery.all
+    @last_minutes=Location.all.order("created_at DESC").limit(5)
+    @popular_posts=Location.all.order("view DESC").limit(5)
+
+    if params[:search].present? do
+      @query = Province.search
+        fulltext params[:search]
+      end
+      @provinces = @query.results
+    else
+      @provinces=[]
     end
-    @provinces = @query.results
+    render 'home/index'
   end
   def about
     @areas=Area.all
   end
+
+
   private
 # Use callbacks to share common setup or constraints between actions.
   def set_areas

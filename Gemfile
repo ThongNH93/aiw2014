@@ -30,11 +30,16 @@ gem 'devise'
 # ActiveAdmin
 gem 'activeadmin', github: 'activeadmin'
 
-gem 'tzinfo-data'
+gem 'tzinfo-data',platforms:[:mingw, :x64_mingw, :mswin]
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'ckeditor'
 gem 'carrierwave'
+gem 'mini_magick'
+
+gem 'kaminari'
+
 # gem 'sunspot_rails'
-# gem 'sunspot_solr'
-gem 'sunspot_rails', github: "betam4x/sunspot" # , '2.1.1'
-gem 'sunspot_solr', github: "betam4x/sunspot" # '2.1.1'
+
+# group :development do
+#   gem 'sunspot_solr'
+# end
