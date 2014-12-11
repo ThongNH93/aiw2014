@@ -1,4 +1,7 @@
-aiw2014starter
-==============
+# Pagination for [Twitter Bootstrap 2](http://getbootstrap.com/2.3.2/components.html#pagination)
 
-Starter code for AIW 2014 course
+With support for:
+
+- erb
+- haml
+- slim

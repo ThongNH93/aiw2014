@@ -27,7 +27,9 @@
         <%end%>
       </div>
       <div class="clear"></div>
-      <%= paginate @images_galleries %>
+      <div class="flickr_pagination" >
+        <%= will_paginate @images_galleries,:container => false %>
+      </div>
     </div>
   </div>
 </div>

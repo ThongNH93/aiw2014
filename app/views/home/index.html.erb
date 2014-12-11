@@ -37,7 +37,7 @@
                   <span> that are worth seeing</span> </div>
               </li>
               <% @top_images.each do |image| %>
-                  <li><img src=<%=image_path(image.image)%> alt=""></li>
+                  <li><img src=<%=image_path(image.image)%> alt="" width="1280px" height="853px"></li>
               <% end %>
             </ul>
           </div>
@@ -114,30 +114,24 @@
       <div class="grid_4">
         <div class="newsletter_title">Province </div>
         <div class="n_container">
-            <form id="newsletter" action="#">
-            <div class="success">Your subscribe request has been sent!</div>
-            <div class="text1">Sign up to receive our newsletters </div>
-            <label class="email">
-                <input type="email" value="email address" >
-                <span class="error">*This is not a valid email address.</span> </label>
-                <div class="clear"></div>
-                <a href="#" class="" data-type="submit"></a>
-            </form>
-          <%= form_tag home_search_path, method: :get do %>
-              <div>
-                <%= text_field_tag :search, params[:search],
+            <!--<form id="newsletter" action="home_search_path" method="get">-->
+            <!--<div class="success">Your subscribe request has been sent!</div>-->
+            <!--<div class="text1">Sign up to receive our newsletters </div>-->
+            <!--<label class="email">-->
+                <!--<input type="" name="search" value="email address" >-->
+                <!--<span class="error">*This is not a valid email address.</span> </label>-->
+                <!--<div class="clear"></div>-->
+                <!--<a href="" class="" data-type=""></a>-->
+            <!--</form>-->
+          <!--<% form_tag home_search_path, method: :get do %>-->
+              <!--<div>-->
+                <% text_field_tag :search, params[:search],
                                    placeholder: 'Search province', type: :search, style: 'width: 200px' %>
-              </div>
-              <div><%= submit_tag 'Search' %></div>
-          <% end %>
+              <!--</div>-->
+              <!--<div><%= submit_tag 'Search' %></div>-->
+          <!--<% end %>-->
+          <div style="margin-top: 20px"></div>
           <ul class="list">
-            <!--<li><a href="#">Hanoi </a></li>-->
-            <!--<li><a href="#">Haiphong </a></li>-->
-            <!--<li><a href="#">Saigon </a></li>-->
-            <!--<li><a href="#">Hue </a></li>-->
-            <!--<li><a href="#">Cantho </a></li>-->
-            <!--<li><a href="#">Nhatrang </a></li>-->
-            <!--<li><a href="#">Halong Bay </a></li>-->
           <% @provinces.each do|province| %>
             <li><%= link_to province.name, home_province_path(province.id)%></li>
           <% end %>

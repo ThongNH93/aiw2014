@@ -1,14 +1,19 @@
 ActiveAdmin.register Location do
-   permit_params :name, :description, :province_id,:image,:content
+  ActiveAdmin.register Location do
+    permit_params :name, :description, :province_id,:image,:content, :author
 
-   form(:html => { :multipart => true }) do |f|
-       f.inputs "Location" do
-         f.input :province_id, :as => :select,  :collection => Province.all
-         f.input :name, label: "Tiêu đề"
-         f.input :description, label: "Tóm tắt"
-         f.input :content, label: "Nội dung", input_html: {class: 'ckeditor'}
-         f.input :image, label:"Hình ảnh", :as => :file
-       end
+    form(:html => { :multipart => true }) do |f|
+      f.inputs "Location" do
+        f.input :province_id, :as => :select,  :collection => Province.all
+        f.input :name, label: "Tiêu đề"
+        f.input :author
+        f.input :description, label: "Tóm tắt"
+        f.input :content, label: "Nội dung", input_html: {class: 'ckeditor'}
+        f.input :image, label:"Hình ảnh", :as => :file
+      end
       f.actions
-   end
+    end
+  end
+
+
 end

@@ -1,16 +1,24 @@
 <div class="grid_3">
+  <h3>Popular Posts</h3>
+  <!--<ul class="list2 l1">-->
+  <div style="margin-top: -30px">
+
+  <% @popular_posts.each do |article| %>
+         <div style="padding-top: 10px">
+
+            <%= link_to home_location_path(article.id) do %>
+                <img src=<%=image_path(article.image )%> alt="" width="150px" height="100px" >
+           <% end %>
+           <div> <%= link_to article.name, home_location_path(article.id)%></div>
+       </div>
+    <% end %>
+  </div>
+
+  <!--</ul>-->
   <h3>Province</h3>
   <ul class="list2 l1">
     <% @provinces.each do |province| %>
         <li><%= link_to province.name, home_province_path(province.id)  %></li>
     <% end %>
-  </ul>
-  <h3>Archive</h3>
-  <ul class="list2 l1">
-    <li><a href="#">April 2014</a></li>
-    <li><a href="#">March 2014</a></li>
-    <li><a href="#">February 2014</a></li>
-    <li><a href="#">January 2014</a></li>
-    <li><a href="#">December 2013</a></li>
   </ul>
 </div>

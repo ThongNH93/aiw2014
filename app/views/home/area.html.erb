@@ -10,7 +10,7 @@
                     MAR</time>
                   <div class="extra_wrapper">
                     <div class="text1 upp"><%=  link_to location.name, home_location_path(location.id) %> </div>
-                    <div class="links">Posted by Demo Use </div>
+                    <div class="links">Posted by <%= location.author %></div>
                   </div>
                   <div class="clear"></div>
                   <%= link_to home_location_path(location.id) do %>
@@ -23,7 +23,9 @@
                   </div>
                 </div>
             <% end %>
-        <%= paginate @locations %>
+        <div class="flickr_pagination" >
+          <%= will_paginate @locations,:container => false %>
+        </div>
       </div>
 
        <%= render 'layouts/sidebar' %>

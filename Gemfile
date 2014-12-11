@@ -35,10 +35,10 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'will_paginate', '~> 3.0.6'
 
-gem 'kaminari'
-
-# gem 'sunspot_rails'
+gem 'sunspot_rails'
+gem 'progress_bar'
 
 # group :development do
 #   gem 'sunspot_solr'
