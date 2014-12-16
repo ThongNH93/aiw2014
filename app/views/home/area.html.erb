@@ -6,8 +6,36 @@
 
             <% @locations.each do |location|%>
             <div class="blog">
-                  <time datetime="2014-01-01">23<br>
-                    MAR</time>
+                 <time datetime=""><%= location.created_at.day %><br>
+                    <%  month_string = ""
+                        case location.created_at.day
+                          when 1
+                            month_string="Jan"
+                          when 2
+                            month_string= "Feb"
+                          when 3
+                            month_string="Mar"
+                          when 4
+                            month_string="Apr"
+                          when 5
+                            month_string="May"
+                          when 6
+                            month_string="June"
+                          when 7
+                            month_string="July"
+                          when 8
+                            month_string= "Agu"
+                          when 9
+                            month_string= "Sep"
+                          when 10
+                            month_string= "Oct"
+                          when 11
+                            month_string= "Nov"
+                          when 12
+                            month_string= "Dec"
+                        end
+                    %>
+                    <%= month_string %></time>
                   <div class="extra_wrapper">
                     <div class="text1 upp"><%=  link_to location.name, home_location_path(location.id) %> </div>
                     <div class="links">Posted by <%= location.author %></div>

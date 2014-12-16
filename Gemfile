@@ -40,7 +40,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'sunspot_rails'
 gem 'progress_bar'
 
-# group :development do
-#   gem 'sunspot_solr'
-# end
+group :development do
+  gem 'sunspot_solr'
+end
 # gem 'sunspot_solr'

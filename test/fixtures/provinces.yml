@@ -2,6 +2,8 @@
 
 one:
   name: MyString
+  area_id: 1
 
 two:
   name: MyString
+  area_id: 1

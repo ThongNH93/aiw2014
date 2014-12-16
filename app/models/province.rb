@@ -5,7 +5,7 @@ class Province < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
 
-  searchable  :auto_index => true, :auto_remove => true do
-    string :name
+  searchable do
+    text :name
   end
 end
