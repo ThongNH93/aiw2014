@@ -115,23 +115,21 @@
         <div class="newsletter_title">Province </div>
         <div class="n_container">
             <!--<form id="newsletter" action="home_search_path" method="get">-->
-            <!--<div class="success">Your subscribe request has been sent!</div>-->
-            <!--<div class="text1">Sign up to receive our newsletters </div>-->
-            <!--<label class="email">-->
+                <!--<div class="success">Your subscribe request has been sent!</div>-->
+                <!--&lt;!&ndash;<label class="email">&ndash;&gt;-->
                 <!--<input type="" name="search" value="email address" >-->
                 <!--<span class="error">*This is not a valid email address.</span> </label>-->
-                <!--<div class="clear"></div>-->
                 <!--<a href="" class="" data-type=""></a>-->
             <!--</form>-->
-          <%= form_tag home_search_path, method: :get do %>
-              <div>
-                <%= text_field_tag :search, params[:search],
-                                   placeholder: 'Search province', type: :search, style: 'width: 200px' %>
-              </div>
-              <div><%= submit_tag 'Search' %></div>
+          <%= form_tag home_search_path, method: :get, id:"newsletter" do  %>
+              <div class="text1">Search Province </div>
+
+              <%= text_field_tag :search, params[:search],
+                                         placeholder: 'Search province', type: :search %>
+
           <% end %>
-          <div style="margin-top: 20px"></div>
-          <ul class="list">
+
+          <ul class="list" style="margin-top: -30px">
           <% @provinces.each do|province| %>
             <li><%= link_to province.name, home_province_path(province.id)%></li>
           <% end %>

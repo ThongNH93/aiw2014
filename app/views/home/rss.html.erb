@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="content">
+    <div class="container_12" style="margin-top: -100px">
+        <h3 class="head1">Province json data</h3>
+      <% @provinces.each_with_index  do|province,i| %>
+          <% if i==0 || i==20 ||i==40 ||i==60 %>
+              <ul class="list2">
+          <% end %>
+          <li><%= link_to province.name, home_rss_province_path(province.id)%></li>
+          <% if i%20 %>
+            </ul>
+          <% end %>
+      <% end %>
+      <div class="clear"></div>
+
+    </div>
+  </div>
+</div>

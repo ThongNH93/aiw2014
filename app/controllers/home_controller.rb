@@ -42,18 +42,30 @@ class HomeController < ApplicationController
     @popular_posts=Location.all.order("view DESC").limit(5)
 
     if params[:search].present?
-         @query = Sunspot.search(Province) do
-         # @query = Province.search do
-         fulltext params[:search]
-      end
-      @provinces = @query.results
-      # raise( @provinces.size.to_s)
+    #      # @query = Sunspot.search(Province) do
+    #      @query = Province.search do
+    #      fulltext params[:search]
+    #   end
+    #   @provinces = @query.results
+
+      @provinces=Province.all.where("name LIKE ?","#{params[:search]}%")
+
     else
       @provinces=Province.joins(:locations).distinct(:province_id).order('locations.view DESC').limit(7)
     end
     render 'home/index'
   end
   def about
+  end
+
+  def rss
+    @provinces=Province.all
+  end
+  def rss_province
+    @province=Province.find(params[:id])
+    @locations=@province.locations
+    # raise(@locations.size.to_s)
+    render xml: @locations
   end
 
   private

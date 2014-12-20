@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Area.create!(name: 'NORTHERN VIETNAM' )
+Area.create!(name: 'CENTRAL VIETNAM' )
+Area.create!(name: 'SOUTHERN VIETNAM' )

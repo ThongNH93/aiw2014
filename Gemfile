@@ -39,8 +39,9 @@ gem 'will_paginate', '~> 3.0.6'
 
 gem 'sunspot_rails'
 gem 'progress_bar'
-
 group :development do
   gem 'sunspot_solr'
 end
+
+# gem "meta_search"
 # gem 'sunspot_solr'

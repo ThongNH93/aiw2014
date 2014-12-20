@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'home/image/:id', to: 'home#image', as:'home_image'
   get 'home/about'
   get 'home/search', to: 'home#search', as: 'home_search'
+  get 'home/rss', to: 'home#rss', as: 'home_rss'
+  get 'home/rss/:id', to: 'home#rss_province', as: 'home_rss_province'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

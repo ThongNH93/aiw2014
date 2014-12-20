@@ -9,7 +9,7 @@ default: &default
   encoding: utf8
   database: aiw2014
   username: root
-  password: root
+  password: ""
   host: 127.0.0.1
   port: 3306
 
