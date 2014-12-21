@@ -64,8 +64,7 @@ class HomeController < ApplicationController
   def rss_province
     @province=Province.find(params[:id])
     @locations=@province.locations
-    # raise(@locations.size.to_s)
-    render xml: @locations
+    render :template => 'home/rss_province.xml.builder', :layout => false
   end
 
   private

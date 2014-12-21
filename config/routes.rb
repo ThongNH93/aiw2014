@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'home/rss', to: 'home#rss', as: 'home_rss'
   get 'home/rss/:id', to: 'home#rss_province', as: 'home_rss_province'
 
+  resources :provinces
+  resources :locations
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
