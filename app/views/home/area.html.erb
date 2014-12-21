@@ -8,7 +8,7 @@
             <div class="blog">
                  <time datetime=""><%= location.created_at.day %><br>
                     <%  month_string = ""
-                        case location.created_at.day
+                        case location.created_at.month
                           when 1
                             month_string="Jan"
                           when 2
@@ -33,9 +33,9 @@
                             month_string= "Nov"
                           when 12
                             month_string= "Dec"
-                        end
-                    %>
+                        end%>
                     <%= month_string %></time>
+
                   <div class="extra_wrapper">
                     <div class="text1 upp"><%=  link_to location.name, home_location_path(location.id) %> </div>
                     <div class="links">Posted by <%= location.author %></div>

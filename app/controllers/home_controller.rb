@@ -33,6 +33,8 @@ class HomeController < ApplicationController
     @province=@location.province
     @related_locations=@province.locations.except(@location.id).limit(5)
     @location.update_attribute("view",@location.view.to_i+1)
+
+    # raise(@location.created_at.month.to_s)
   end
 
   def search
