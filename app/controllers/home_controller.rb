@@ -60,6 +60,11 @@ class HomeController < ApplicationController
 
   def rss
     @provinces=Province.all
+    # raise(Area.find_by_name("NORTHERN VIETNAM").name)
+    @north_provinces=Area.find_by_name("NORTHERN VIETNAM").provinces
+    @central_provinces=Area.find_by_name("CENTRAL VIETNAM").provinces
+    @south_provinces=Area.find_by_name("SOUTHERN VIETNAM").provinces
+
   end
   def rss_province
     @province=Province.find(params[:id])
