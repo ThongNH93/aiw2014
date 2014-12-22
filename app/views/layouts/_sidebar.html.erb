@@ -9,10 +9,12 @@
             <%= link_to home_location_path(article.id) do %>
                 <img src=<%=image_path(article.image )%> alt="" width="150px" height="100px" >
            <% end %>
-           <div> <%= link_to article.name, home_location_path(article.id)%></div>
+           <p style="font-size: 0.4em"></p>
+           <div> <%= link_to article.name, home_location_path(article.id), style: "font-size: 1.4em"%></div>
        </div>
     <% end %>
   </div>
+  </br>
 
   <!--</ul>-->
   <h3>Province</h3>

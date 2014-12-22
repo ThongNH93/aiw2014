@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     @area=Area.find(params[:id])
     @provinces=@area.provinces
     @locations=@area.places.order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
-    @popular_posts=@area.places.order("view DESC").limit(5)
+    @popular_posts=@area.places.order("view DESC").limit  (5)
 
   end
   def province
