@@ -5,6 +5,8 @@ class HomeController < ApplicationController
     @top_images=TopImage.all.limit(5)
     @last_minutes=Location.all.order("created_at DESC").limit(5)
     @popular_posts=Location.all.order("view DESC").limit(5)
+    # raise(@last_minutes.size.to_s )
+    # raise(@popular_posts.size.to_s )
 
     @provinces=Province.joins(:locations).distinct(:province_id).order('locations.view DESC').limit(7)
      # raise(@provinces.first.name)
